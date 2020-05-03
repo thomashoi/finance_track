@@ -5,7 +5,8 @@
         <tr>
           <th scope="col">Ticker</th>
           <th scope="col">Name</th>
-          <th scope="col">Price</th>
+          <th scope="col">Price <%= link_to (fa_icon 'repeat'), refresh_stock_path,
+                                      remote: true, class: "btn btn-xs btn-success repeat-icon" %></th>
           <th scope="col">Actions</th>
         </tr>
       </thead>

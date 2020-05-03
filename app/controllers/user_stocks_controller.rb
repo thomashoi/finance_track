@@ -19,4 +19,18 @@ class UserStocksController < ApplicationController
     redirect_to my_portfolio_path
   end
 
+  def refresh
+    @tracked_stocks = current_user.stocks
+    respond_to do |format|
+      format.js { render partial: 'users/refresh_result'}
+    end
+    #tracked_stocks = current_user.stocks
+    #tracked_stocks.each do |stock|
+    #  stock.last_price = Stock.new_lookup(stock.ticker).last_price
+    #  stock.save
+    #end
+    #redirect_to my_portfolio_path
+  end
+
+
 end

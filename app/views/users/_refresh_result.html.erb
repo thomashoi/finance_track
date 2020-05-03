@@ -1,0 +1,19 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+
+
+  <div class="card card-header results-block">
+    <table class="col-md-12">
+      <tbody>
+        <% @tracked_stocks.each do |stock| %>
+          <tr>
+            <td><strong>Ticker: </strong><%= stock.ticker %></th>
+            <td><strong>Name: </strong><%= stock.name %></td>
+            <td><strong>Price: </strong><%= Stock.new_lookup(stock.ticker).last_price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

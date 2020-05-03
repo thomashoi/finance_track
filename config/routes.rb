@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'my_friends', to: 'users#my_friends'
   get 'search_stock', to: 'stocks#search'
   get 'search_friend', to: 'users#search'
+  get 'refresh_stock', to: 'user_stocks#refresh' 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
